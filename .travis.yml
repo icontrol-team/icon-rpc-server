@@ -19,6 +19,7 @@ deploy:
   provider: pypi
   distributions: sdist bdist_wheel
   user: iconfoundation
+  server: https://test.pypi.org/legacy/
   password: $PYPI_PW
   on:
-    branch: master
+    branch: travis-test
