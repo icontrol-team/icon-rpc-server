@@ -69,6 +69,9 @@ setup_options = {
     'license': "Apache License 2.0",
     'setup_requires': setup_requires,
     'install_requires': install_requires,
+    'extras_require': {
+        'tests': ['pytest>=4.6.3', "pytest-asyncio", "pytest-mock"],
+    },
     'test_suite': 'tests',
     'entry_points': {
         'console_scripts': [

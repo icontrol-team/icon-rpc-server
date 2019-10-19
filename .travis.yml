@@ -1,19 +1,27 @@
 language: python
 python:
-  - "3.6"
+  - "3.7"
+dist: bionic
+services:
+- docker
+
+matrix:
+ allow_failures:
+  - python: "3.6"
+
 
 branches:
   only:
   - master
   - develop
-  - /^release-.*$/
-  - travis-test
+  - /^release/.*$/
+  - travis-test-test
 
 install:
-  - pip install -r requirements.txt
+  - pip install -e .[tests]
 
 script:
-  - python setup.py test
+  - pytest -vv
 
 deploy:
   provider: pypi
